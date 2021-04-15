@@ -36,13 +36,21 @@ function Import-ProProfile {
 function Invoke-Import ($Id) { 
     $state = $script:imports[$id]
 
-    # clean up the callback
-    Unregister-Event -SourceIdentifier $id
-    foreach ($i in $state) { 
-        # We are running in module scope, but the scriptblock is bound to what
-        # ever scope created it. Dot-source into that scope so user can use the variables 
-        # and functions from it in subsequent calls.
-        . $i
+    try {
+        # clean up the callback
+        Unregister-Event -SourceIdentifier $id
+        foreach ($i in $state) { 
+            # We are running in module scope, but the scriptblock is bound to what
+            # ever scope created it. Dot-source into that scope so user can use the variables 
+            # and functions from it in subsequent calls.
+            # 
+            # You might also want to add try catch here to be able to progress to next scriptblock if one fails
+            . $i
+        }
+    }
+    finally { 
+        # clean up callbacks because we invoked them
+        $script:imports.Remove($id)
     }
 }
 
