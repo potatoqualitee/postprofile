@@ -1,6 +1,6 @@
 $script:imports = @{}
 
-function Import-ProProfile {
+function Import-PostProfile {
     [CmdletBinding()]
     param (
         # Do not support importing files, otherwise you need to do scoping kung-fu to import into user scope.
@@ -54,4 +54,4 @@ function Invoke-Import ($Id) {
     }
 }
 
-Export-ModuleMember -Function Import-ProProfile
+Export-ModuleMember -Function Import-PostProfile

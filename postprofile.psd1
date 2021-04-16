@@ -4,7 +4,7 @@
 @{
 
     # Script module or binary module file associated with this manifest.
-    RootModule         = 'proprofile.psm1'
+    RootModule         = 'postprofile.psm1'
 
     # Version number of this module.
     ModuleVersion      = '0.0.1'
@@ -34,7 +34,7 @@
     FormatsToProcess   = @()
 
     # Functions to export from this module
-    FunctionsToExport  = @('Import-ProProfile')
+    FunctionsToExport  = @('Import-PostProfile')
 
     # Cmdlets to export from this module
     CmdletsToExport    = @()
@@ -58,10 +58,10 @@
             Tags         = @('performance','profile','powershell','async')
 
             # The web address of an icon which can be used in galleries to represent this module
-            IconUri      = "https://github.com/potatoqualitee/proprofile/raw/main/logo.png"
+            IconUri      = "https://github.com/potatoqualitee/postprofile/raw/main/logo.png"
 
             # The web address of this module's project or support homepage.
-            ProjectUri   = "https://github.com/potatoqualitee/proprofile"
+            ProjectUri   = "https://github.com/potatoqualitee/postprofile"
 
             # The web address of this module's license. Points to a page that's embeddable and linkable.
             LicenseUri   = "https://opensource.org/licenses/MIT"
